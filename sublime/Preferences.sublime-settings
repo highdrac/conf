@@ -1,0 +1,18 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/Monokai Extended (SL).tmTheme",
+	"default_encoding": "UTF-8",
+	"draw_white_space": true,
+	"fallback_encoding": "utf-8",
+	"font_face": "MeiryoKe_Gothic",
+	"font_size": 15,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"show_panel_on_build": true,
+	"theme": "Brogrammer.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
