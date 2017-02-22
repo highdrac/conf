@@ -1,6 +1,3 @@
 [submodule "dotfiles/.vim/vim-monokai"]
 	path = dotfiles/.vim/vim-monokai
 	url = git@github.com:sickill/vim-monokai.git
-[submodule "dotfiles/ls-colors"]
-	path = dotfiles/ls-colors
-	url = git@github.com:jalemolina/LS_COLORS.git
