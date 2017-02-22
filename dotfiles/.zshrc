@@ -119,6 +119,7 @@ alias gcl="git clone"
 alias gft="git fetch"
 alias gmg="git merge"
 alias gps="git push"
+alias grm="git rm -r"
 
 # ^D でシェルを終了しない
 setopt ignore_eof
