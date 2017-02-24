@@ -1,8 +1,13 @@
-" UTF-8
+" set encoding
 set encoding=utf-8
+scriptencoding utf-8
+
+" init all settings
+set all&
+" init autocmd
+autocmd!
 
 " カラースキーム
-syntax on
 colorscheme monokai
 set t_Co=256
 hi Comment ctermfg=102
@@ -89,8 +94,15 @@ execute 'set runtimepath^=' . s:dein_repo_dir
 
 call dein#begin(s:dein_dir)
 
+" 本体
 call dein#add('Shougo/dein.vim')
+" 入力補完
 call dein#add('Shougo/neocomplete.vim')
+" ウィンドウリサイズ C-eでサイズ編集
+call dein#add('simeji/winresizer')
+" ヤンク履歴
+call dein#add('LeafCage/yankround.vim')
+
     :
 
 call dein#end()
@@ -99,5 +111,20 @@ if dein#check_install()
     call dein#install()
 endif
 
+" yankround.vim {{{
+"" キーマップ
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+"" 履歴取得数
+let g:yankround_max_history = 50
+""履歴一覧(kien/ctrlp.vim)
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+" }}}
+
 filetype plugin indent on
+
+" syntax highlight
+syntax on
 

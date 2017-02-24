@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"Block Cursor Everywhere",
 		"BracketHighlighter",
 		"Case Conversion",
 		"ConvertToUTF8",
@@ -36,6 +37,7 @@
 		"Theme - Brogrammer",
 		"Theme - Flatland",
 		"Theme - Nil",
-		"TrailingSpaces"
+		"TrailingSpaces",
+		"Vintageous"
 	]
 }
