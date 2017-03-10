@@ -6,13 +6,16 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"Auto Refresh",
 		"Block Cursor Everywhere",
 		"BracketHighlighter",
 		"Case Conversion",
+		"Color Highlighter",
 		"ConvertToUTF8",
 		"DataConverter",
 		"Emmet",
 		"FileDiffs",
+		"FindKeyConflicts",
 		"GitGutter",
 		"IMESupport",
 		"Increment Selection",
