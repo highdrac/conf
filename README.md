@@ -4,11 +4,13 @@
 
 # directory
 
+```
 /  
 |-- dotfiles       # .系ファイル  
 |-- sublime        # SublimeTextのPackages/User  
 `-- windows        # Windows固有設定  
     `-- shortcuts  # ランチャに放り込むショートカット群  
+```
 
 # memo
 
@@ -41,7 +43,7 @@
 | プライベートタブ              | タブ単位でプライベート切り替え |                                  |
 | FT DeepDark                   | テーマ                         |                                  |
 
-## sublime
+## SublimeText
 
 ### 設定の共有について
 
@@ -84,6 +86,8 @@
 | IncermentSelection   | 複数選択の数字をインクリメント   |                     |
 | Origami              | ペイン操作                       |                     |
 | Pretty JSON          | JSONフォーマット調整             |                     |
+| Auto Refresh         | 自動リロード                     |                     |
+| Color Highlighter    | カラーコード可視化               |                     |
 
 ## shortcuts
 
