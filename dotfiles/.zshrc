@@ -87,8 +87,8 @@ setopt auto_pushd
 # ディレクトリスタックと重複したディレクトリをスタックに追加しない
 setopt pushd_ignore_dups
 
-# ディレクトリ移動時にls -al
-function chpwd() { ls -l }
+# ディレクトリ移動時にls -Fal
+function chpwd() { ls -Fal --color }
 
 
 # バックグラウンド処理の状態変化をすぐに通知する
@@ -108,10 +108,11 @@ setopt rm_star_wait
 
 
 # alias
-alias la="ls -Fa --color"
+alias la="ls -Fal --color"
 alias ll="ls -Fl --color"
 alias du="du -h"
 alias df="df -h"
+alias reload="exec zsh -l"
 
 alias gaa="git add --all"
 alias gcm="git commit"
