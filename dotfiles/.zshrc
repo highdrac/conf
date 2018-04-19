@@ -138,7 +138,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #eval $( dircolors -b $HOME/.LS_COLORS)
 
 # tmux
-if [ -z $TMUX ]; then
+if [[ -z $TMUX && -z "$PS1" ]]; then
   if $(tmux has-session 2> /dev/null); then
     tmux a
   else

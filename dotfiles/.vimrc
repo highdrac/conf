@@ -79,20 +79,29 @@ set visualbell t_vb=
 set noerrorbells
 
 " dein.vim
-let s:dein_dir = expand('~/.vim/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &compatible
     set nocompatible
 endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if !isdirectory(s:dein_repo_dir)
-    execute '!git clone git@github.com:Shougo/dein.vim.git' s:dein_repo_dir
+if dein#load_state('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
+
+    call dein#add('~/.cache/dein')
+    call dein#add('Shougo/deoplete.nvim')
+    if !has('nvim')
+        call dein#add('roxma/nvim-yarp')
+        call dein#add('roxma/vim-hug-neovim-rpc')
+    endif
+
+    call dein#end()
+    call dein#save_state()
 endif
 
-execute 'set runtimepath^=' . s:dein_repo_dir
-
-call dein#begin(s:dein_dir)
+filetype plugin indent on
+syntax enable
 
 " 本体
 call dein#add('Shougo/dein.vim')
