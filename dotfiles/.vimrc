@@ -36,6 +36,8 @@ set scrolloff=8
 set sidescrolloff=16
 " 左右スクロールは一文字ずつ行う
 set sidescroll=1
+" バックスペースが効かない問題を修正
+set backspace=indent,eol,start
 
 " 保存されていないファイルがあるときは終了前に保存確認
 set confirm
@@ -60,6 +62,12 @@ set softtabstop=4
 set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent
+
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 " マウスの入力を受け付ける
 set mouse=a
@@ -91,6 +99,7 @@ if dein#load_state('~/.cache/dein')
 
     call dein#add('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim')
+    call dein#add('Shougo/denite.nvim')
     if !has('nvim')
         call dein#add('roxma/nvim-yarp')
         call dein#add('roxma/vim-hug-neovim-rpc')
@@ -103,37 +112,5 @@ endif
 filetype plugin indent on
 syntax enable
 
-" 本体
-call dein#add('Shougo/dein.vim')
-" 入力補完
-call dein#add('Shougo/neocomplete.vim')
-" ウィンドウリサイズ C-eでサイズ編集
-call dein#add('simeji/winresizer')
-" ヤンク履歴
-call dein#add('LeafCage/yankround.vim')
-
-    :
-
-call dein#end()
-
-if dein#check_install()
-    call dein#install()
-endif
-
-" yankround.vim {{{
-"" キーマップ
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-"" 履歴取得数
-let g:yankround_max_history = 50
-""履歴一覧(kien/ctrlp.vim)
-nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
-" }}}
-
-filetype plugin indent on
-
-" syntax highlight
-syntax on
+nmap ,r :source ~/.vimrc
 

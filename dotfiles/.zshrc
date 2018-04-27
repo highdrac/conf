@@ -123,6 +123,12 @@ alias gps="git push"
 alias grm="git rm -r"
 alias gsa="git submodule add"
 
+alias bt="bundle init"
+alias bi="bundle install"
+alias bip="bundle install --path vendor/bundle"
+alias bu="bundle update"
+alias be="bundle exec"
+
 # ^D でシェルを終了しない
 setopt ignore_eof
 
@@ -138,10 +144,18 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #eval $( dircolors -b $HOME/.LS_COLORS)
 
 # tmux
-if [[ -z $TMUX && -z "$PS1" ]]; then
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+if [[ -z "$TMUX" && ! -z "$PS1" && "$USER" -ne "root" ]]; then
   if $(tmux has-session 2> /dev/null); then
     tmux a
   else
     tmux new-session \; splitw -h
   fi
 fi
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
