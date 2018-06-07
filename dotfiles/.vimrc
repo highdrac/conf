@@ -100,6 +100,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('~/.cache/dein')
     call dein#add('Shougo/deoplete.nvim')
     call dein#add('Shougo/denite.nvim')
+    call dein#add('Shougo/deoplete-solargraph')
     if !has('nvim')
         call dein#add('roxma/nvim-yarp')
         call dein#add('roxma/vim-hug-neovim-rpc')
@@ -108,9 +109,11 @@ if dein#load_state('~/.cache/dein')
     call dein#end()
     call dein#save_state()
 endif
+let g:deoplete#enable_at_startup = 1
 
 filetype plugin indent on
 syntax enable
+
 
 nmap ,r :source ~/.vimrc
 

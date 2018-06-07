@@ -118,6 +118,7 @@ alias gaa="git add --all"
 alias gcm="git commit"
 alias gcl="git clone"
 alias gft="git fetch"
+alias gch="git checkout"
 alias gmg="git merge"
 alias gps="git push"
 alias grm="git rm -r"
@@ -128,6 +129,8 @@ alias bi="bundle install"
 alias bip="bundle install --path vendor/bundle"
 alias bu="bundle update"
 alias be="bundle exec"
+alias ber="bundle exec ruby"
+alias nber="nohup bundle exec ruby"
 
 # ^D でシェルを終了しない
 setopt ignore_eof
@@ -147,15 +150,17 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-if [[ -z "$TMUX" && ! -z "$PS1" && "$USER" -ne "root" ]]; then
-  if $(tmux has-session 2> /dev/null); then
-    tmux a
-  else
-    tmux new-session \; splitw -h
+if [[ $USER != "root" ]]; then
+  if [[ -z $TMUX ]]; then
+    if $(tmux has-session 2> /dev/null); then
+      tmux a
+    else
+      tmux new-session \; splitw -h
+    fi
   fi
+  # rbenv
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
 fi
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
