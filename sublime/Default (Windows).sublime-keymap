@@ -1,6 +1,0 @@
-[
-    // Trailing spaces
-    { "keys": ["ctrl+alt+t"], "command": "delete_trailing_spaces" },
-    // Origami
-    { "keys": ["ctrl+shift+w"], "command": "destroy_pane", "args": {"direction": "self"} },
-]
