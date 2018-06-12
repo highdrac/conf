@@ -1,4 +1,4 @@
-set TOOLS_DIR=C:\tools\
+set TOOLS_DIR=C:\tool\
 set CONF_DIR=C:\conf\
 
 set ASR_DIR=%TOOLS_DIR%Asr\
