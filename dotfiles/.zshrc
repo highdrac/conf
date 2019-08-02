@@ -48,6 +48,8 @@ setopt magic_equal_subst
 # alias補完
 setopt complete_aliases
 
+# glob展開を無効に
+setopt nonomatch
 
 # 履歴系
 
